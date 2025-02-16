@@ -25,8 +25,9 @@ test_generator = test_datagen.flow_from_directory(
 model = tf.keras.models.load_model("asl_model.h5")
 
 # Get class labels mapping
-class_labels = test_generator.class_indices
-print("Class Labels:", class_labels) 
+# class_labels = test_generator.class_indices
+class_labels = {v: k for k, v in test_generator.class_indices.items()}
+# print("Class Labels:", class_labels) 
 
 # Get test images
 test_images, test_labels = next(test_generator)  
@@ -43,10 +44,9 @@ num_images = 25
 plt.figure(figsize=(15, 10))
 
 for i in range(num_images):
-    plt.subplot(5, 5, i+1)  # 2 rows, 5 columns
-    img = test_images[i]  # Get image
+    plt.subplot(5, 5, i+1) 
+    img = test_images[i]
     true_label = class_labels[true_classes[i]] 
-    # true_label = class_labels[np.argmax(true_label[i])]
     predicted_label = class_labels[predicted_classes[i]]
     
     # Convert image from TensorFlow format (0-1 range) back to normal
