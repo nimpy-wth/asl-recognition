@@ -71,14 +71,14 @@ while cap.isOpened():
             # Predict sign letter
             prediction = model.predict(landmarks)
             predicted_class = np.argmax(prediction)
-            predicted_label = label_encoder.inverse_transform([predicted_class])[0]  # Get actual label
+            predicted_label = label_encoder.inverse_transform([predicted_class])[0]  
 
             # Add prediction to smoothing queue
             prediction_queue.append(predicted_label)
 
             # Apply smoothing: Find most frequent label in the queue
             if len(prediction_queue) == smoothing_window:
-                smoothed_prediction = max(set(prediction_queue), key=prediction_queue.count)  # Most common prediction
+                smoothed_prediction = max(set(prediction_queue), key=prediction_queue.count) 
                 
                 frame_counter += 1  
                 
@@ -103,14 +103,16 @@ while cap.isOpened():
                         detected_text = "" 
                         previous_letter = None
 
-                # ✅ Allow repeated letter only if:
-                # 1. Hand has changed shape significantly (landmark variation)
-                # 2. Enough time (cooldown) has passed
-                elif smoothed_prediction != previous_letter or (last_hand_landmarks is not None and np.linalg.norm(landmarks.flatten() - last_hand_landmarks.flatten()) > 0.05 and frame_counter - last_repeat_frame > repeat_cooldown):
+                # Allow repeated letter only if:
+                # 1. Hand has changed shape significantly
+                # 2. Cooldown has passed
+                elif smoothed_prediction != previous_letter or (last_hand_landmarks is not None 
+                                                                and np.linalg.norm(landmarks.flatten() - last_hand_landmarks.flatten()) > 0.05 
+                                                                and frame_counter - last_repeat_frame > repeat_cooldown):
                     detected_text += smoothed_prediction
-                    previous_letter = smoothed_prediction  # Update last detected letter
-                    last_hand_landmarks = landmarks  # Store last detected hand shape
-                    last_repeat_frame = frame_counter  # Reset cooldown
+                    previous_letter = smoothed_prediction  
+                    last_hand_landmarks = landmarks 
+                    last_repeat_frame = frame_counter 
 
                 cv2.putText(frame, f"Prediction: {smoothed_prediction}", (50, 50),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
