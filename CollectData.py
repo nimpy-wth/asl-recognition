@@ -10,7 +10,7 @@ mp_drawing = mp.solutions.drawing_utils
 dataset_dir = "dataset"
 os.makedirs(dataset_dir, exist_ok=True)
 
-csv_file = os.path.join(dataset_dir, "landmarks_data2.csv")
+csv_file = os.path.join(dataset_dir, "landmarks_data.csv")
 csv_header = ["label"]
 for i in range(21):
     csv_header.extend([f"x{i}", f"y{i}", f"z{i}"])
