@@ -32,7 +32,7 @@ Ensure that you have Python installed on your system before proceeding.
 ## Usage
 - Use the toggle switch to enable left-hand recognition mode.
 - Recognized gestures will be translated to text displayed in real-time.
-  ![46652784-アメリカ手話-asl-のアルファベットのスペルの指](https://github.com/user-attachments/assets/9559f733-fb9b-44d2-b048-03ef638c70df)
+![46652784-アメリカ手話-asl-のアルファベットのスペルの指](https://github.com/user-attachments/assets/9559f733-fb9b-44d2-b048-03ef638c70df)
 - Special gestures:
    - SPACE: Adds a space to the text.
    - DELETE: Deletes the last character.
