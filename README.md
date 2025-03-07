@@ -28,7 +28,6 @@ Ensure that you have Python installed on your system before proceeding.
    ```bash
    python app.py
    ```
-   
 ## Usage
 - Use the toggle switch to enable left-hand recognition mode.
 - Recognized gestures will be translated to text displayed in real-time.
@@ -38,9 +37,9 @@ Ensure that you have Python installed on your system before proceeding.
    - DELETE: Deletes the last character.
    - CONFIRM: Saves the recognized text as a confirmed word.
 
-## Results
-- #### Video Result : 
-- #### Presentation : 
+## Model Evaluate & Results
+#### Model Sructure 
+![image](https://github.com/user-attachments/assets/d975cb62-ab35-4556-86c4-6fdea2bae27e)
 
 #### Model Accuracy : 98.71%
 #### Training vs Validation Loss & Accuracy
