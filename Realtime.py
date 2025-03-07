@@ -91,7 +91,7 @@ while cap.isOpened():
 
                 # DELETE: Remove one letter per detection, slow down deletion
                 elif smoothed_prediction == "DELETE":
-                    if frame_counter - last_delete_time > 15: 
+                    if frame_counter - last_delete_time > 10: 
                         detected_text = detected_text[:-1]  
                         last_delete_time = frame_counter
                         previous_letter = None  
