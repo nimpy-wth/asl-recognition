@@ -25,13 +25,10 @@ Ensure that you have Python installed on your system before proceeding.
    pip install -r requirements.txt
    ```
 4. Run the application following the usage instructions.
-
-## Usage
-1. Ensure you are inside the project directory.
-2. Run the application:
    ```bash
    python app.py
    ```
+   
 ## Usage
 
 - Use the toggle switch to enable left-hand recognition mode.
