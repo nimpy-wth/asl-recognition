@@ -24,19 +24,27 @@ Ensure that you have Python installed on your system before proceeding.
    ```bash
    pip install -r requirements.txt
    ```
-4. Run the application following the usage instructions.
+4. Run the application:
    ```bash
    python app.py
    ```
    
 ## Usage
-
 - Use the toggle switch to enable left-hand recognition mode.
 - Recognized gestures will be translated to text displayed in real-time.
+  ![46652784-アメリカ手話-asl-のアルファベットのスペルの指](https://github.com/user-attachments/assets/9559f733-fb9b-44d2-b048-03ef638c70df)
 - Special gestures:
    - SPACE: Adds a space to the text.
    - DELETE: Deletes the last character.
    - CONFIRM: Saves the recognized text as a confirmed word.
 
 ## Results
-###
+- #### Video Result : 
+- #### Presentation : 
+
+#### Model Accuracy : 98.71%
+#### Training vs Validation Loss & Accuracy
+![2acc_loss](https://github.com/user-attachments/assets/9225ca8a-c7f4-4828-bd51-20e2b3319359)
+#### Confusion Matrix
+![2confu](https://github.com/user-attachments/assets/4d50c72f-b19c-494b-bf14-348b44f03af8)
+
