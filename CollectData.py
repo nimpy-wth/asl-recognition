@@ -10,7 +10,7 @@ mp_drawing = mp.solutions.drawing_utils
 dataset_dir = "dataset"
 os.makedirs(dataset_dir, exist_ok=True)
 
-csv_file = os.path.join(dataset_dir, "landmarks_data.csv")
+csv_file = os.path.join(dataset_dir, "landmarks_data2.csv")
 csv_header = ["label"]
 for i in range(21):
     csv_header.extend([f"x{i}", f"y{i}", f"z{i}"])
@@ -52,10 +52,9 @@ while True:
                 for hand_landmarks in results.multi_hand_landmarks:
                     mp_drawing.draw_landmarks(white_canvas, hand_landmarks, mp_hands.HAND_CONNECTIONS)
 
-                    img_path = os.path.join(label_dir, f"{label}_{count}.png")
-                    cv2.imwrite(img_path, white_canvas)
-                    count += 1
-                    print(f"Saved: {img_path}")
+                    # img_path = os.path.join(label_dir, f"{label}_{count}.png")
+                    #cv2.imwrite(img_path, white_canvas)
+                    #print(f"Saved: {img_path}")
 
                     with open(csv_file, mode="a", newline="") as file:
                         writer = csv.writer(file)
@@ -63,6 +62,9 @@ while True:
                         for landmark in hand_landmarks.landmark:
                             row.extend([landmark.x, landmark.y, landmark.z])
                         writer.writerow(row)
+
+                    count += 1
+
 
             cv2.imshow("Hand Landmarks", white_canvas)
             if cv2.waitKey(1) & 0xFF == ord('q'):

@@ -13,7 +13,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import confusion_matrix, classification_report
 
 #Load Hand Landmarks CSV
-data_path = "landmarks_data.csv"
+data_path = "dataset/landmarks_data.csv"
 df = pd.read_csv(data_path)
 
 # Extract Features and Labels
